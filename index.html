@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Datebase Firebase</title>
+</head>
+<body>
+
+    <div class="container my-5">
+        <h1>Application</h1>
+        <form>
+            <input type="hidden" id="fireid" value="0"/>
+            <label for="Title">Title</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="title" required>
+            </div>
+            <label for="Body">Body</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="body" required>
+            </div>
+            <label for="Important">Important</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="important" required>
+            </div>
+                <button id="update" class="btn btn-primary" value="update">update</button>
+                <button  id="add" class="btn btn-primary" value="add" >add</button>
+        </form>
+        <div id="cards"></div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyASuoGYg5YNHOBZBLvAqljWqeGp5wI_kDc",
+          authDomain: "school-project-applcation.firebaseapp.com",
+          databaseURL: "https://school-project-applcation.firebaseio.com",
+          projectId: "school-project-applcation",
+          storageBucket: "school-project-applcation.appspot.com",
+          messagingSenderId: "474562700528",
+          appId: "1:474562700528:web:3c0b2f17e943f677cbce35"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+      </script>
+  <script src="sandbox.js"></script>
+  
+</body>
+</html>
