@@ -62,8 +62,7 @@ form.addEventListener('click', e => {
         }).catch(err => {
             console.log(err)
         }).then(() => {
-            console.log("hello");
-            updateView();})
+            console.log("hello");})
         
   }
     
