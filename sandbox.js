@@ -17,8 +17,8 @@ const addApplication = (application,id,fireid) => {
 
     list.innerHTML += html;
 }
-function updateView(){
-    db.collection('application').get().then(snapshot => {
+
+db.collection('application').get().then(snapshot => {
             let id = 0;
             snapshot.docs.forEach(doc => {
                 addApplication(doc.data(),id,doc.id);
@@ -26,10 +26,7 @@ function updateView(){
             })
             }).catch(err => {
                 console.log(err)
-        })
-
-}
-updateView();
+})
 
 form.addEventListener('click', e => {
     e.preventDefault();
@@ -44,7 +41,6 @@ form.addEventListener('click', e => {
     }
     db.collection('application').add(application).then(() => {
         console.log("application add")
-        updateview();
     }).catch(err => {
         console.log(err)
         
